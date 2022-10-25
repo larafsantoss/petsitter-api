@@ -11,8 +11,7 @@ const _checkUserToken = async (userToken) => {
     if (!decoded.params.id) {
         throw Error('Invalid token!');
     } else {
-        // const userId = decoded.params.id;
-        // return userId;
+        
 
         const idDecoded = decoded.params.id;
         const _verificaUsuarioBlackList = async function (token) {
@@ -36,6 +35,7 @@ const _getUserId = async (authHeader) => {
     const parts = authHeader.split(' ');
     if (!parts.length === 2)
         throw Error('Token error!');
+        
     const [scheme, token] = parts;
     if (!/^Bearer$/i.test(scheme)) {
         throw Error('Invalid token format!');

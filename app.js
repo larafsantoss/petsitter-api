@@ -1,13 +1,13 @@
-// ex 01
 // Importing express 
 // with app I will use all express sources ---> const app = express();
 // development enviroment (creating functions)/homologation is what the client see
 
 
 const express = require('express');
+require(".config/config");
 const app = express();
-var config = require('./config/config');
-var db = require('./config/db');
+const config = require('./config/config');
+const db = require('./config/db');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
@@ -34,5 +34,5 @@ app.use(bodyParser.json());
 require('./config/routes')(app);
 
 app.listen(config.port, function(){
-    console.log("Great! It works.");
+    console.log("Great! It works. Server started on port 4000");
 })

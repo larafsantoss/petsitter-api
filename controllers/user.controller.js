@@ -47,20 +47,21 @@ exports.getUser = async (req, res) => {
 
 
 exports.createUser = async (req, res) => {
-    try {
-        var user = req.body;
+    res.send("api is working")
+    // try {
+    //     var user = req.body;
 
-        const newUser = await User.create(user);
-        newUser.password = undefined;
+    //     const newUser = await User.create(user);
+    //     newUser.password = undefined;
 
-        if(newUser) {
-            return res.status(201).send({ message: "User created!", data: newUser });
-        } else {
-            return res.status(400).send({ message: "An error has occured! User not created!" });
-        }
-    } catch (error) {
-        return res.status(400).send(error.message);
-    }
+    //     if(newUser) {
+    //         return res.status(201).send({ message: "User created!", data: newUser });
+    //     } else {
+    //         return res.status(400).send({ message: "An error has occured! User not created!" });
+    //     }
+    // } catch (error) {
+    //     return res.status(400).send(error.message);
+    // }
 };
 
 exports.updateUser = async (req, res) => {
