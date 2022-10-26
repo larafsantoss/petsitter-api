@@ -47,21 +47,20 @@ exports.getUser = async (req, res) => {
 
 
 exports.createUser = async (req, res) => {
-    res.send("api is working")
-    // try {
-    //     var user = req.body;
+    try {
+        var user = req.body;
 
-    //     const newUser = await User.create(user);
-    //     newUser.password = undefined;
+        const newUser = await User.create(user);
+        newUser.password = undefined;
 
-    //     if(newUser) {
-    //         return res.status(201).send({ message: "User created!", data: newUser });
-    //     } else {
-    //         return res.status(400).send({ message: "An error has occured! User not created!" });
-    //     }
-    // } catch (error) {
-    //     return res.status(400).send(error.message);
-    // }
+        if(newUser) {
+            return res.status(201).send({ message: "User created!", data: newUser });
+        } else {
+            return res.status(400).send({ message: "An error has occured! User not created!" });
+        }
+    } catch (error) {
+        return res.status(400).send(error.message);
+    }
 };
 
 exports.updateUser = async (req, res) => {
@@ -70,7 +69,7 @@ exports.updateUser = async (req, res) => {
 
         const user = req.body;
 
-        const userUpdated = await User.findByIdAndUpdate(mongoose.Types.ObjectId(usertId), { $set: user }, { new: true });
+        const userUpdated = await User.findByIdAndUpdate(mongoose.Types.ObjectId(userId), { $set: user }, { new: true });
 
         if (userUpdated) {
             return res.status(202).json({ message: "User Updated", data: userUpdated });

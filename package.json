@@ -1,12 +1,12 @@
 {
-  "name": "ex_01",
+  "name": "app",
   "engines": {
     "node": "18.10.0",
     "npm": "8.15.0"
   },
   "version": "1.0.0",
-  "description": "ex_01",
-  "main": "ex_01.js",
+  "description": "app",
+  "main": "app.js",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
@@ -18,7 +18,8 @@
     "mongoose": "^5.9.23"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "start": "nodemon",
     "dev": "nodemon server"
   },

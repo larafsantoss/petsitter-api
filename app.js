@@ -4,11 +4,9 @@
 
 
 const express = require('express');
-require(".config/config");
 const app = express();
 const config = require('./config/config');
 const db = require('./config/db');
-var cors = require('cors');
 var bodyParser = require('body-parser');
 
 
@@ -28,10 +26,15 @@ d.on("error", function (error) {
     console.log('Connection error: ' + error);
 });
 
-app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static("./client/build"));
 
 require('./config/routes')(app);
+
+app.get("*", (req, res) => {
+    res.setHeader("content-type", "text/html");
+    fs.createReadStream(`${__dirname}/client/build/index.html`).pipe(res);
+});
 
 app.listen(config.port, function(){
     console.log("Great! It works. Server started on port 4000");

@@ -47,7 +47,7 @@ UserSchema.methods.generatePassword = function (password) {
 
 
 UserSchema.pre("save", async function () {
-    this.password = await this.generatePassword(this.password);
+    // this.password = await this.generatePassword(this.password);
 });
 
 
