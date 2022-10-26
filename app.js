@@ -8,6 +8,7 @@ const app = express();
 const config = require('./config/config');
 const db = require('./config/db');
 var bodyParser = require('body-parser');
+const fs = require('fs');
 
 
 process.env.NODE_ENV = config.env;
