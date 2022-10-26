@@ -37,6 +37,6 @@ app.get("*", (req, res) => {
     fs.createReadStream(`${__dirname}/client/build/index.html`).pipe(res);
 });
 
-app.listen(config.port, function(){
+app.listen(config.port || 4000, function(){
     console.log("Great! It works. Server started on port 4000");
 })
