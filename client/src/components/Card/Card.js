@@ -7,6 +7,9 @@ function Card(props) {
   const [draftName, setDraftName] = useState("")
   const [file, setFile] = useState()
   const [draftEmail, setDraftEmail] = useState("")
+  // const [draftNeighbourhood, setDraftNeighbourhood] = useState("")
+  // const [draftDescription, setDraftDescription] = useState("")
+  // const [draftPrice, setDraftPrice] = useState("")
 
   async function submitHandler(e) {
     e.preventDefault()
@@ -14,7 +17,7 @@ function Card(props) {
     props.setUsers(prev =>
       prev.map(function (user) {
         if (user._id == props.id) {
-          return { ...user, name: draftName, email: draftEmail }
+          return { ...user, name: draftName, email: draftEmail}
         }
         return user
       })

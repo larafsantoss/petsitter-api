@@ -5,7 +5,7 @@ let bcrypt = require('bcrypt');
 var UserSchema = new Schema({
     name: {
         type: String,
-        minlength: 5,
+        minlength: 2,
         maxlength: 20,
         unique: [true,'This login already exists!']
     },
