@@ -9,7 +9,6 @@ import {
 import HomePage from "./pages/HomePage/HomePage";
 import PetSitters from "./pages/PetSitters/PetSitters";
 import Footer from "./components/Footer/Footer"
-import SignUp from "./pages/SignUp/SignUp";
 import { AddUserForm } from "./components/AddUserForm/AddUserForm";
 
 
@@ -24,10 +23,6 @@ export default function App() {
           <Route path="/profiles" element={<PetSitters />}>
           </Route>
           <Route path="/update" element={<PetSitters />}>
-          </Route>
-          <Route path="/signup" element={<SignUp />}>
-          </Route>
-          <Route path="/logout" element={<PetSitters />}>
           </Route>
           <Route path="/add" element={<AddUserForm />}>
           </Route>
