@@ -8,6 +8,7 @@
   "description": "app",
   "main": "app.js",
   "dependencies": {
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -19,7 +20,7 @@
     "mongoose": "^5.9.23"
   },
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest --testPathPattern=routes",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "start": "node app.js",
     "dev": "nodemon server"
