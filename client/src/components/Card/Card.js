@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Axios from "axios"
 
 
@@ -7,17 +7,21 @@ function Card(props) {
   const [draftName, setDraftName] = useState("")
   const [file, setFile] = useState()
   const [draftEmail, setDraftEmail] = useState("")
-  // const [draftNeighbourhood, setDraftNeighbourhood] = useState("")
-  // const [draftDescription, setDraftDescription] = useState("")
-  // const [draftPrice, setDraftPrice] = useState("")
+  const [draftNeighbourhood, setDraftNeighbourhood] = useState("")
+  const [draftDescription, setDraftDescription] = useState("")
+  const [draftPrice, setDraftPrice] = useState("")
+
+  useEffect(() => {
+    console.log(props)
+  }, [])
 
   async function submitHandler(e) {
     e.preventDefault()
     setIsEditing(false)
     props.setUsers(prev =>
       prev.map(function (user) {
-        if (user._id == props.id) {
-          return { ...user, name: draftName, email: draftEmail}
+        if (user._id === props.id) {
+          return { ...user, name: draftName, email: draftEmail , neighbourhood: draftNeighbourhood, description: draftDescription, price: draftPrice }
         }
         return user
       })
@@ -29,11 +33,15 @@ function Card(props) {
     data.append("_id", props.id)
     data.append("name", draftName)
     data.append("email", draftEmail)
+    data.append("neighbourhood", draftNeighbourhood)
+    data.append("description", draftDescription)
+    data.append("price", draftPrice)
+
     const newPhoto = await Axios.post("/api/users/update-user", data, { headers: { "Content-Type": "multipart/form-data" } })
     if (newPhoto.data) {
       props.setUsers(prev => {
         return prev.map(function (user) {
-          if (user._id == props.id) {
+          if (user._id === props.id) {
             return { ...user, photo: newPhoto.data }
           }
           return user
@@ -59,6 +67,9 @@ function Card(props) {
           <>
             <h4>{props.name}</h4>
             <p className="text-muted small">{props.email}</p>
+            <p className="text-muted small">{props.neighbourhood}</p>
+            <p className="text-muted small">{props.description}</p>
+            <p className="text-muted small">{props.price}</p>
             {!props.readOnly && (
               <>
                 <button
@@ -66,6 +77,9 @@ function Card(props) {
                     setIsEditing(true)
                     setDraftName(props.name)
                     setDraftEmail(props.email)
+                    setDraftEmail(props.neighbourhood)
+                    setDraftEmail(props.description)
+                    setDraftEmail(props.price)
                     setFile("")
                     }
                   
@@ -101,11 +115,23 @@ function Card(props) {
             <div className="mb-2">
               <input onChange={e => setDraftEmail(e.target.value)} type="text" className="form-control form-control-sm" value={draftEmail} />
             </div>
+            <div className="mb-2">
+              <input onChange={e => setDraftNeighbourhood(e.target.value)} type="text" className="form-control form-control-sm" value={draftNeighbourhood} />
+            </div>
+            <div className="mb-2">
+              <input onChange={e => setDraftDescription(e.target.value)} type="text" className="form-control form-control-sm" value={draftDescription} />
+            </div>
+            <div className="mb-2">
+              <input onChange={e => setDraftPrice(e.target.value)} type="text" className="form-control form-control-sm" value={draftPrice} />
+            </div>
             <button onClick={() => {
               Axios.put(`/api/users/update/${props.id}`, {
                 ...props,
                 email: draftEmail,
-                name: draftName
+                name: draftName,
+                neighbourhood: draftNeighbourhood,
+                description: draftDescription,
+                price: draftPrice,
               }).then(() => {
                 props.onUpdate()
               });

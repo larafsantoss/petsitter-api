@@ -8,6 +8,7 @@ export default function PetSitters() {
     axios.get("/api/users").then(
       (response) => {
         setData(response.data);
+        console.log(response.data)
       },
       (error) => {
         console.log(error.message);
@@ -23,6 +24,8 @@ export default function PetSitters() {
                     name={item.name}
                     email={item.email}
                     description={item.description}
+                    neighbourhood={item.neighbourhood}
+                    price={item.price}
                     admin={false}
                     onUpdate ={() => {
                       axios.get("/api/users").then(

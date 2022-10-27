@@ -28,7 +28,7 @@ var UserSchema = new Schema({
         type: String
     },
     price: {
-        type: Number
+        type: String
     },
     description: {
         type: String

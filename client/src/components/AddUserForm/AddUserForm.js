@@ -9,7 +9,7 @@ import {
   MDBRow,
   MDBCol,
   MDBInput,
-  MDBRadio,
+  // MDBRadio,
 
 }
 from 'mdb-react-ui-kit';
@@ -19,6 +19,9 @@ from 'mdb-react-ui-kit';
 export const AddUserForm = () => {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
+    const [neighborhood, setNeighbourhood] = useState();
+    const [description, setDescription] = useState();
+    const [price, setPrice] = useState();
     
   return (
     <MDBContainer fluid className='bg-dark'>
@@ -42,12 +45,12 @@ export const AddUserForm = () => {
                   <MDBRow>
 
                     <MDBCol md='6'>
-                      <MDBInput wrapperClass='mb-4' label='First Name' size='lg' id='form1' type='text' onChange={event => setName(event.target.value)}/>
+                      <MDBInput wrapperClass='mb-4' label='Name' size='lg' id='form1' type='text' onChange={event => setName(event.target.value)}/>
                     </MDBCol>
 
-                    <MDBCol md='6'>
+                    {/* <MDBCol md='6'>
                       <MDBInput wrapperClass='mb-4' label='Last Name' size='lg' id='form2' type='text'/>
-                    </MDBCol>
+                    </MDBCol> */}
 
                   </MDBRow>
 
@@ -61,9 +64,9 @@ export const AddUserForm = () => {
                   </div> */}
 
 
-                  <MDBInput wrapperClass='mb-4' label='Neighbourhood' size='lg' id='form4' type='text'/>
-                  <MDBInput wrapperClass='mb-4' label='Description' size='lg' id='form5' type='text'/>
-                  <MDBInput wrapperClass='mb-4' label='$ per hour' size='lg' id='form6' type='text'/>
+                  <MDBInput wrapperClass='mb-4' label='Neighbourhood' size='lg' id='form4' type='text'onChange={event => setNeighbourhood(event.target.value)}/>
+                  <MDBInput wrapperClass='mb-4' label='Description' size='lg' id='form5' type='text'onChange={event => setDescription(event.target.value)}/>
+                  <MDBInput wrapperClass='mb-4' label='$ per hour' size='lg' id='form6' type='text'onChange={event => setPrice(event.target.value)}/>
 
                   <div className="d-flex justify-content-end pt-3">
                     <MDBBtn color='light' size='lg'>Reset all</MDBBtn>
@@ -71,7 +74,10 @@ export const AddUserForm = () => {
                 
                 Axios.post("/api/users/create", {
                     name,
-                    email
+                    email,
+                    neighborhood,
+                    description,
+                    price
                 })}}>Submit form</MDBBtn>
                   </div>
 
