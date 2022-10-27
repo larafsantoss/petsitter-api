@@ -51,7 +51,7 @@ const handleSubmit = () => {
           {props.description}
         </MDBCardText>
       {/* </MDBCardBody> */}
-      <MDBListGroup flush>
+      <MDBListGroup >
         <MDBListGroupItem>{props.email}</MDBListGroupItem>
         <MDBListGroupItem>{props.neighbourhood}</MDBListGroupItem>
         <MDBListGroupItem>{props.price}</MDBListGroupItem>
