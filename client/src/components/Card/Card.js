@@ -46,7 +46,7 @@ const handleSubmit = () => {
       <MDBCardBody>
         {!isEditing && (
           <>
-          <MDBCardTitle>{props.name}</MDBCardTitle>
+          <MDBCardTitle data-testid="title-name">{props.name}</MDBCardTitle>
         <MDBCardText>
           {props.description}
         </MDBCardText>
