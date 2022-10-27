@@ -20,9 +20,10 @@ import { useNavigate } from "react-router-dom";
 export const AddUserForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [neighborhood, setNeighbourhood] = useState("");
+  const [neighbourhood, setNeighbourhood] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
   const navigate = useNavigate();
   const reset = () => {
     setName("")
@@ -30,14 +31,16 @@ export const AddUserForm = () => {
     setNeighbourhood("")
     setDescription("")
     setPrice("")
+    setImage("")
   }
   const handleSubmit = () => {
     Axios.post("/api/users/create", {
       name,
       email,
-      neighborhood,
+      neighbourhood,
       description,
-      price
+      price, 
+      image
     }).then(() => {
       reset()
       navigate("/profiles")
@@ -77,9 +80,10 @@ export const AddUserForm = () => {
 
                   <MDBInput wrapperClass='mb-4' label='Email' size='lg' id='form3' type='text' value={email} onChange={event => setEmail(event.target.value)} />
 
-                  <MDBInput wrapperClass='mb-4' label='Neighbourhood' size='lg' id='form4' type='text' value={neighborhood} onChange={event => setNeighbourhood(event.target.value)} />
+                  <MDBInput wrapperClass='mb-4' label='Neighbourhood' size='lg' id='form4' type='text' value={neighbourhood} onChange={event => setNeighbourhood(event.target.value)} />
                   <MDBInput wrapperClass='mb-4' label='Description' size='lg' id='form5' type='text' value={description} onChange={event => setDescription(event.target.value)} />
                   <MDBInput wrapperClass='mb-4' label='$ per hour' size='lg' id='form6' type='text' value={price} onChange={event => setPrice(event.target.value)} />
+                  <MDBInput wrapperClass='mb-4' label='image' size='lg' id='form6' type='text' value={image} onChange={event => setImage(event.target.value)} />
 
                   <div className="d-flex justify-content-end pt-3">
                     <MDBBtn color='light' size='lg' onClick={() => {reset()}}>Reset all</MDBBtn>

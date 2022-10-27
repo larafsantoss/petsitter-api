@@ -24,7 +24,7 @@ var UserSchema = new Schema({
     admin: {
         type: Boolean
     },
-    neighborhood: {
+    neighbourhood: {
         type: String
     },
     price: {

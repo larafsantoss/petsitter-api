@@ -7,6 +7,7 @@ export default function PetSitters() {
   const getAll = () => {
     axios.get("/api/users").then(
       (response) => {
+        console.log("veio do back", response);
         setData(response.data);
       },
       (error) => {
@@ -28,9 +29,9 @@ export default function PetSitters() {
             name={item.name}
             email={item.email}
             description={item.description}
-            neighbourhood={item.neighborhood}
+            neighbourhood={item.neighbourhood}
             price={item.price}
-            admin={false}
+            image={item.image}
             onUpdate={getAll}
           />
         );
