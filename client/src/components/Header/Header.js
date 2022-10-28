@@ -41,7 +41,7 @@ export default function Header() {
           </MDBNavbarToggler>
           <MDBCollapse show={showNavColor} navbar>
             <MDBNavbarNav className='me-auto mb-2 mb-lg-0'>
-              <MDBNavbarItem className='active'>
+              <MDBNavbarItem className='header'>
                 <MDBNavbarLink aria-current='page' href='/'>
                   Home
                 </MDBNavbarLink>
