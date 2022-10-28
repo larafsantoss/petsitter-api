@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 import {
   MDBBtn,
   MDBContainer,
@@ -9,12 +10,8 @@ import {
   MDBRow,
   MDBCol,
   MDBInput,
-  // MDBRadio,
-
 }
   from 'mdb-react-ui-kit';
-import { useNavigate } from "react-router-dom";
-
 
 
 export const AddUserForm = () => {
