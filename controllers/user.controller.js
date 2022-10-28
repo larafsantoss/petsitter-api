@@ -16,8 +16,7 @@ function generateToken(params = {}) {
 exports.getUsers = async (req, res) => {
     try{
         let users = await User.find({});
-        console.log("testandoooo", users)
-
+      
         if(users) {
             return res.status(202).json(users);
         }else {

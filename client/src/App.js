@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import PetSitters from "./pages/PetSitters/PetSitters";
-import Footer from "./components/Footer/Footer"
 import { AddUserForm } from "./components/AddUserForm/AddUserForm";
 
 
@@ -28,7 +27,6 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

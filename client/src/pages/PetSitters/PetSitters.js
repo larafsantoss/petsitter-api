@@ -5,7 +5,7 @@ import Card from "../../components/Card/Card";
 export default function PetSitters() {
   const [data, setData] = useState([]);
   const getAll = () => {
-    axios.get("/api/users").then(
+    axios.get("/api/users/").then(
       (response) => {
         console.log("veio do back", response);
         setData(response.data);

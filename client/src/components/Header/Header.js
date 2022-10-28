@@ -7,7 +7,6 @@ export default function Header() {
       <nav>
         <Link to="/">Home</Link> |{" "}
         <Link to="/profiles">Pet Sitter</Link>{" "}
-        <Link to="/signup">Sign Up</Link>
         <Link to="/add">Add</Link>
       </nav>
     </div>
