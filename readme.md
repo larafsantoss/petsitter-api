@@ -53,7 +53,7 @@ npm start
 
 ## MVP
 
-![My Image](client/public/petsitter.pngpetsitter.png)
+![My Image](client/public/petsitter.png)
 
 ---
 
