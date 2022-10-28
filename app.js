@@ -2,14 +2,12 @@
 // with app I will use all express sources ---> const app = express();
 // development enviroment (creating functions)/homologation is what the client see
 
-
 const express = require('express');
 const app = express();
 const config = require('./config/config');
 const db = require('./config/db');
 var bodyParser = require('body-parser');
 const fs = require('fs');
-
 
 process.env.NODE_ENV = config.env;
 /* connecting to mongo db*/

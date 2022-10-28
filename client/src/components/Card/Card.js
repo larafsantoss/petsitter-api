@@ -6,7 +6,6 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
-  // MDBCardLink,
   MDBListGroup,
   MDBListGroupItem,
   MDBRow,
@@ -50,7 +49,7 @@ const handleSubmit = () => {
         <MDBCardText>
           {props.description}
         </MDBCardText>
-      {/* </MDBCardBody> */}
+
       <MDBListGroup >
         <MDBListGroupItem>{props.email}</MDBListGroupItem>
         <MDBListGroupItem>{props.neighbourhood}</MDBListGroupItem>

@@ -13,14 +13,12 @@ import {
 
 export default function Header() {
   const [showNavColor, setShowNavColor] = useState(false);
-  // const [showNavColorSecond, setShowNavColorSecond] = useState(false);
-  // const [showNavColorThird, setShowNavColorThird] = useState(false);
 
   return (
     <>
       <MDBNavbar expand='lg' light style={{ backgroundColor: '#C5CAE9'}} >
         <MDBContainer fluid>
-          <MDBNavbarBrand href='#'>
+          <MDBNavbarBrand className='brand' href='#'>
             <img
               src='https://cdn-icons-png.flaticon.com/512/3460/3460335.png'
               height='50'
@@ -46,62 +44,15 @@ export default function Header() {
                   Home
                 </MDBNavbarLink>
               </MDBNavbarItem>
-              <MDBNavbarItem>
+              <MDBNavbarItem className='header'>
                 <MDBNavbarLink href='/profiles'>Pet Sitters</MDBNavbarLink>
               </MDBNavbarItem>
-              <MDBNavbarItem>
+              <MDBNavbarItem className='header'>
                 <MDBNavbarLink href='/add'>Add Profile</MDBNavbarLink>
               </MDBNavbarItem>
-              {/* <MDBNavbarItem>
-                <MDBNavbarLink href='#'>About</MDBNavbarLink>
-              </MDBNavbarItem> */}
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>
 </>
   )};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { Link } from "react-router-dom";
-
-// export default function Header() {
-//   return (
-//     <div>
-//       <h1>Home</h1>
-//       <nav>
-//         <Link to="/">Home</Link> |{" "}
-//         <Link to="/profiles">Pet Sitter</Link>{" "}
-//         <Link to="/add">Add</Link>
-//       </nav>
-//     </div>
-//   );
-// }
