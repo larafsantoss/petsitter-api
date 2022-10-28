@@ -68,26 +68,18 @@ export const AddUserForm = () => {
 
                   <MDBRow>
 
-                    <MDBCol md='6'>
-                      <MDBInput wrapperClass='mb-4' label='Name' size='lg' id='form1' type='text' value={name} onChange={event => setName(event.target.value)} />
-                    </MDBCol>
-
-                    {/* <MDBCol md='6'>
-                      <MDBInput wrapperClass='mb-4' label='Last Name' size='lg' id='form2' type='text'/>
-                    </MDBCol> */}
+                  <MDBInput wrapperClass='mb-4' label='Name' size='lg' id='form1' type='text' value={name} onChange={event => setName(event.target.value)} />
+                  <MDBInput wrapperClass='mb-4' label='Email' size='lg' id='form3' type='text' value={email} onChange={event => setEmail(event.target.value)} />
+                  <MDBInput wrapperClass='mb-4' label='Suburb' size='lg' id='form4' type='text' value={neighbourhood} onChange={event => setNeighbourhood(event.target.value)} />
+                  <MDBInput wrapperClass='mb-4' label='Description' size='lg' id='form5' type='text' value={description} onChange={event => setDescription(event.target.value)} />
+                  <MDBInput wrapperClass='mb-4' label='$ per hour' size='lg' id='form6' type='text' value={price} onChange={event => setPrice(event.target.value)} />
+                  <MDBInput wrapperClass='mb-4' label='Image' size='lg' id='form6' type='text' value={image} onChange={event => setImage(event.target.value)} />
 
                   </MDBRow>
 
-                  <MDBInput wrapperClass='mb-4' label='Email' size='lg' id='form3' type='text' value={email} onChange={event => setEmail(event.target.value)} />
-
-                  <MDBInput wrapperClass='mb-4' label='Neighbourhood' size='lg' id='form4' type='text' value={neighbourhood} onChange={event => setNeighbourhood(event.target.value)} />
-                  <MDBInput wrapperClass='mb-4' label='Description' size='lg' id='form5' type='text' value={description} onChange={event => setDescription(event.target.value)} />
-                  <MDBInput wrapperClass='mb-4' label='$ per hour' size='lg' id='form6' type='text' value={price} onChange={event => setPrice(event.target.value)} />
-                  <MDBInput wrapperClass='mb-4' label='image' size='lg' id='form6' type='text' value={image} onChange={event => setImage(event.target.value)} />
-
                   <div className="d-flex justify-content-end pt-3">
                     <MDBBtn color='light' size='lg' onClick={() => {reset()}}>Reset all</MDBBtn>
-                    <MDBBtn className='ms-2' color='warning' size='lg' onClick={() => {
+                    <MDBBtn outline className='ms-2' color='secondary' size='lg' onClick={() => {
                       handleSubmit()
 
                     }}>Submit form</MDBBtn>

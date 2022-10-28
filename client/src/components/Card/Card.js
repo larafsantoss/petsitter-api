@@ -58,7 +58,7 @@ const handleSubmit = () => {
       </MDBListGroup>
       {!props.readOnly && (
         <>
-        <MDBBtn size='sm' onClick={() => { setIsEditing(true)}}>Edit Button</MDBBtn>
+        <MDBBtn size='sm' color='secondary' onClick={() => { setIsEditing(true)}}>Edit Button</MDBBtn>
         <MDBBtn outline className='mx-2' color='danger' size='sm' onClick={ async () => {
           const test = Axios.delete(`api/users/${props.id}`).then(() => {
             props.onUpdate()
@@ -76,10 +76,10 @@ const handleSubmit = () => {
             <MDBInput autoFocus onChange={e => setDraftDescription(e.target.value)} label='Description' id='typeText' type='text' value={draftDescription} /> <br />
             <MDBInput autoFocus onChange={e => setDraftPrice(e.target.value)} label='$ per hour' id='typeText' type='text' value={draftPrice} /> <br />
             <MDBInput autoFocus onChange={e => setDraftImage(e.target.value)} label='Image' id='typeText' type='text' value={draftImage} /> <br />
-            <MDBBtn size='sm' onClick={() => { handleSubmit() }}>
+            <MDBBtn size='sm' outline className='mx-2' color='secondary' onClick={() => { handleSubmit() }}>
         Save
       </MDBBtn>
-            <MDBBtn onClick={() => { setIsEditing(false) }} outline className='mx-2' color='secondary' size='sm'>
+            <MDBBtn onClick={() => { setIsEditing(false) }} className='mx-2' color='light' size='sm'>
         Cancel
             </MDBBtn>
           </div>
