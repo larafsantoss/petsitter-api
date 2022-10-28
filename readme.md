@@ -53,7 +53,7 @@ npm start
 
 ## MVP
 
-![](https://github.com/larafsantoss/petsitter-api/client/public/petsitter.png)
+![My Image](client/public/petsitter.pngpetsitter.png)
 
 ---
 
